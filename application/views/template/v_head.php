@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Web GIS</title>
   <!-- plugins:css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="<?= base_url('assets/')?>vendors/feather/feather.css">
   <link rel="stylesheet" href="<?= base_url('assets/')?>vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="<?= base_url('assets/')?>vendors/ti-icons/css/themify-icons.css">
@@ -27,4 +28,5 @@
   <link rel="stylesheet" href="<?= base_url('assets/')?>css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="<?= base_url('assets/')?>images/favicon.png" />
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
