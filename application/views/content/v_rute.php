@@ -21,30 +21,13 @@
     }).addTo(map);
 
 
-    // create a red polyline from an array of LatLng points
-    var latlngs = [
-        [[-6.449613, 111.024693],
-        [-6.448888, 111.023919],
-        [-6.448096, 111.024989],
-        [-6.446345, 111.023058]],
-        [[-6.445828, 111.022286],
-        [-6.445263, 111.020961],
-        [-6.444959, 111.020014]],
-    ];
-
-    var polyline = L.polyline(latlngs, {color: 'blue'}).bindPopup("<b>Jalur 1!</b><br />Haiii.").addTo(map);
-
-
-    var latlngs1 = [
-        [-6.448301, 111.025252],
-        [-6.449820, 111.026813],
-    ];
-
-    var polyline1 = L.polyline(latlngs1, {color: 'red'}).bindPopup("<b>Jalur 2!</b><br />Haiii.").addTo(map);
-
-    
-    map.fitBounds(polyline.getBounds());
-    // zoom the map to the polyline
-   
+    L.Routing.control({
+    waypoints: [
+        L.latLng(-6.449820, 111.026813),
+        L.latLng(-6.438345, 111.004619)
+    ],
+        routeWhileDragging: true
+    }).addTo(map);
+ 
 
 </script>

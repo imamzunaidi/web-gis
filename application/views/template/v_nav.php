@@ -365,6 +365,7 @@
             <li class="nav-item"> <a class="nav-link" href="<?= base_url('maps')?>">Lokasi</a></li>
             <li class="nav-item"> <a class="nav-link" href="<?= base_url('maker')?>">Maker</a></li>
             <li class="nav-item"> <a class="nav-link" href="<?= base_url('polyline')?>">Polyline</a></li>
+            <li class="nav-item"> <a class="nav-link" href="<?= base_url('rute')?>">Rute</a></li>
             </ul>
         </div>
         </li>
