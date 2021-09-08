@@ -1,5 +1,14 @@
 <div class="content-wrapper">
     <h2><?= $title?></h2>
+    <?php 
+        if ($this->session->flashdata('pesan')){
+            echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    '.$this->session->flashdata('pesan').'<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+                    <span aria-hidden="true"></span>
+                </button>
+                </div>';
+        }
+    ?>
     <div class="row">
         <div class="col-md-12">
             <div class="card table-responsive">
@@ -26,8 +35,8 @@
                                     <td><?= $ds->status_sekolah?></td>
                                     <td><?= $ds->ket?></td>
                                     <td>
-                                        <a href="" class = "btn btn-danger btn-sm">Hapus</a>
-                                        <a href="" class = "btn btn-info btn-sm">Edit</a>
+                                        <a href="<?= base_url('sekolah/hapus/'.$ds->id_sekolah)?>" class = "btn btn-danger btn-sm" onClick="return confirm('apakah data ingin di hapus ?')">Hapus</a>
+                                        <a href="<?= base_url('sekolah/edit/'.$ds->id_sekolah)?>" class = "btn btn-info btn-sm">Edit</a>
                                     </td>
                                 </tr>
                             <?php }?>

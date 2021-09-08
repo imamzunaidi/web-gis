@@ -55,8 +55,62 @@ class Sekolah extends CI_Controller {
            $this->session->set_flashdata('pesan', 'Data Berhasil di Simpan');
            redirect('sekolah/input','refresh');
         }
+         
+    }
+
+    public function edit($id_sekolah){
         
-      
+        $this->form_validation->set_rules('nama_sekolah', 'Nama Sekolah', 'required', array(
+            'required' => '%s Harus Diisi !!!' ));
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required', array(
+            'required' => '%s Harus Diisi !!!' ));
+        $this->form_validation->set_rules('status_sekolah', 'Status Sekolah', 'required', array(
+            'required' => '%s Harus Diisi !!!' ));
+        $this->form_validation->set_rules('kepala_sekolah', 'Kepala Sekolah', 'required', array(
+            'required' => '%s Harus Diisi !!!' ));
+        $this->form_validation->set_rules('latitude', 'Latitude', 'required', array(
+            'required' => '%s Harus Diisi !!!' ));
+        $this->form_validation->set_rules('longitude', 'Longitude', 'required', array(
+            'required' => '%s Harus Diisi !!!' ));
+        $this->form_validation->set_rules('ket', 'Keterangan', 'required', array(
+            'required' => '%s Harus Diisi !!!' ));
+
+
+        if ($this->form_validation->run() == FALSE) {
+            $data = array(
+                'title' => 'Input Edit Data Sekolah',
+                'sekolah' => $this->M_sekolah->detail($id_sekolah),
+                'isi'=> 'pemetaan/v_edit_sekolah'
+            );
+    
+            $this->load->view('template/v_wrapper', $data, FALSE);
+        } else {
+            $data = array(
+                'id_sekolah' => $id_sekolah,
+                'nama_sekolah' => $this->input->post('nama_sekolah', TRUE),
+                'alamat' => $this->input->post('alamat', TRUE),
+                'kepala_sekolah' => $this->input->post('kepala_sekolah', TRUE),
+                'status_sekolah' => $this->input->post('status_sekolah', TRUE),
+                'ket' => $this->input->post('ket', TRUE),
+                'latitude' => $this->input->post('latitude', TRUE),
+                'longitude' => $this->input->post('longitude', TRUE),
+            );
+
+            $this->M_sekolah->edit($data);
+            $this->session->set_flashdata('pesan', 'Data Berhasil di Edit');
+            redirect('sekolah','refresh');
+        }
+    }
+
+    public function hapus($id_sekolah){
+
+        $data = array(
+            'id_sekolah' => $id_sekolah
+        );
+
+        $this->M_sekolah->hapus($data);
+        $this->session->set_flashdata('pesan', 'Data Berhasil di Hapus');
+        redirect('sekolah','refresh');
     }
 
 }

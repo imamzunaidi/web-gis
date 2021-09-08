@@ -381,10 +381,14 @@
             <li class="nav-item"><a class="nav-link" href="<?= base_url('sekolah')?>"> Data Sekolah</a></li>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('sekolah/input')?>"> Input Sekolah</a></li>
             </ul>
-        </div>
-        
+        </div>      
         </li>
-       
+        <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('pemetaan')?>">
+            <i class="menu-icon mdi mdi-file-document"></i>
+            <span class="menu-title">Pemetaan</span>
+        </a>
+        </li>
         <li class="nav-item nav-category">User</li>
         <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
